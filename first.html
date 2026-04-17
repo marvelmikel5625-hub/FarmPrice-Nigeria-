@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmPrice Nigeria - Find Trusted Farm Input Suppliers</title>
+    <meta name="description" content="Connect with verified agro-suppliers in Nigeria. Best prices for fertilizer, seeds, and chemicals.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                FarmPrice<span>Nigeria</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="request.html">Request Inputs</a></li>
+                <li><a href="prices.html">Check Prices</a></li>
+                <li><a href="dealers.html">For Dealers</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Trusted Farm Input Suppliers Near You</h1>
+                <p class="hero-tagline">Know Before You Grow</p>
+                <p class="hero-description">Connect with verified agro-dealers. Get the best prices on fertilizer, seeds, and chemicals across Nigeria.</p>
+                
+                <div class="hero-buttons">
+                    <a href="request.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-tractor"></i> Request Farm Inputs
+                    </a>
+                    <a href="prices.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-search"></i> Check Prices
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Request Form -->
+    <section class="section quick-request">
+        <div class="container">
+            <div class="card">
+                <h2><i class="fas fa-bolt" style="color: #FFB300;"></i> Quick Request</h2>
+                <p>Fill this form and verified dealers will contact you via WhatsApp</p>
+                
+                <form id="quickRequestForm" class="quick-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quickProduct">What do you need?</label>
+                            <select id="quickProduct" required>
+                                <option value="">-- Select Product --</option>
+                                <option value="Fertilizer">Fertilizer (NPK, Urea)</option>
+                                <option value="Seeds">Seeds (Maize, Rice, Vegetables)</option>
+                                <option value="Chemicals">Chemicals (Herbicides, Pesticides)</option>
+                                <option value="Other">Other Farm Inputs</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quickQuantity">Quantity Needed</label>
+                            <input type="text" id="quickQuantity" placeholder="e.g., 10 bags" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quickState">Your State</label>
+                            <select id="quickState" required>
+                                <option value="">-- Select State --</option>
+                                <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option>
+                                <option>Anambra</option><option>Bauchi</option><option>Bayelsa</option>
+                                <option>Benue</option><option>Borno</option><option>Cross River</option>
+                                <option>Delta</option><option>Ebonyi</option><option>Edo</option>
+                                <option>Ekiti</option><option>Enugu</option><option>FCT Abuja</option>
+                                <option>Gombe</option><option>Imo</option><option>Jigawa</option>
+                                <option>Kaduna</option><option>Kano</option><option>Katsina</option>
+                                <option>Kebbi</option><option>Kogi</option><option>Kwara</option>
+                                <option>Lagos</option><option>Nasarawa</option><option>Niger</option>
+                                <option>Ogun</option><option>Ondo</option><option>Osun</option>
+                                <option>Oyo</option><option>Plateau</option><option>Rivers</option>
+                                <option>Sokoto</option><option>Taraba</option><option>Yobe</option>
+                                <option>Zamfara</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quickPhone">WhatsApp Number</label>
+                            <input type="tel" id="quickPhone" placeholder="080XXXXXXXX" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fab fa-whatsapp"></i> Submit Request
+                    </button>
+                    
+                    <p class="form-note"><i class="fas fa-shield-alt"></i> Your information is secure. We'll connect you with verified dealers.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Prices Section -->
+    <section class="section latest-prices">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Farm Input Prices</h2>
+                <a href="prices.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="price-grid" id="latestPricesGrid">
+                <div class="loading-placeholder">
+                    <i class="fas fa-spinner fa-spin"></i> Loading latest prices...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works">
+        <div class="container">
+            <h2 class="text-center">How It Works</h2>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">1</div>
+                    <h3>Request</h3>
+                    <p>Tell us what farm inputs you need and your location</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">2</div>
+                    <h3>Compare</h3>
+                    <p>Get price quotes from verified dealers near you</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-icon">3</div>
+                    <h3>Connect</h3>
+                    <p>Deal directly with suppliers via WhatsApp or phone</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dealer CTA -->
+    <section class="section dealer-cta">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2><i class="fas fa-store"></i> Are You an Agro-Dealer?</h2>
+                    <p>Get more customers for your business. List your products and reach thousands of farmers across Nigeria.</p>
+                    <ul class="cta-benefits">
+                        <li><i class="fas fa-check-circle"></i> Verified dealer badge</li>
+                        <li><i class="fas fa-check-circle"></i> Direct customer inquiries</li>
+                        <li><i class="fas fa-check-circle"></i> Increase your sales</li>
+                    </ul>
+                    <a href="dealers.html" class="btn btn-accent btn-large">
+                        <i class="fas fa-store-alt"></i> Join as a Dealer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-leaf"></i> FarmPrice Nigeria</h3>
+                    <p>Connecting Nigerian farmers with trusted input suppliers since 2024.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="request.html">Request Inputs</a></li>
+                        <li><a href="prices.html">Check Prices</a></li>
+                        <li><a href="dealers.html">For Dealers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2348000000000">+234 800 000 0000</a></li>
+                        <li><i class="far fa-envelope"></i> support@farmprice.ng</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FarmPrice Nigeria. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2348000000000?text=Hello%2C%20I%20need%20help%20finding%20farm%20inputs" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Homepage Specific Script -->
+    <script>
+        // Load latest 4 prices for homepage
+        function loadLatestPrices() {
+            const grid = document.getElementById('latestPricesGrid');
+            
+            db.collection('prices')
+                .orderBy('timestamp', 'desc')
+                .limit(4)
+                .get()
+                .then((snapshot) => {
+                    if (snapshot.empty) {
+                        grid.innerHTML = '<p class="no-data">No prices yet. <a href="prices.html">Check prices page</a></p>';
+                        return;
+                    }
+                    
+                    let html = '';
+                    snapshot.forEach((doc) => {
+                        const data = doc.data();
+                        html += `
+                            <div class="price-card">
+                                <h4>${data.product}</h4>
+                                <p class="price-amount">₦${data.price.toLocaleString()}</p>
+                                <p class="price-location"><i class="fas fa-map-marker-alt"></i> ${data.market}, ${data.state}</p>
+                                <p class="price-unit">${data.unit}</p>
+                            </div>
+                        `;
+                    });
+                    grid.innerHTML = html;
+                })
+                .catch((error) => {
+                    console.error('Error loading prices:', error);
+                    grid.innerHTML = '<p class="error">Failed to load prices. Please refresh.</p>';
+                });
+        }
+        
+        // Quick request form submission
+        document.getElementById('quickRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            
+            const requestData = {
+                product: document.getElementById('quickProduct').value,
+                quantity: document.getElementById('quickQuantity').value,
+                state: document.getElementById('quickState').value,
+                phone: document.getElementById('quickPhone').value,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                status: 'new'
+            };
+            
+            db.collection('requests').add(requestData)
+                .then(() => {
+                    showNotification('✅ Request submitted! Dealers will contact you via WhatsApp shortly.', 'success');
+                    document.getElementById('quickRequestForm').reset();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    showNotification('❌ Error submitting request. Please try again.', 'error');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                });
+        });
+        
+        // Load prices on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLatestPrices();
+        });
+    </script>
+</body>
+</html>
